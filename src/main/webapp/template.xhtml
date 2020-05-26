@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:b="http://bootsfaces.net/ui" xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title><ui:insert name="title" /> | Proyecto</title>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8VDnY9i9bjfULni5aAZZGpq7ffr5uh68"></script>
+</h:head>
+<h:body>
+	<h:outputStylesheet library="css" name="bootstrap.min.css" />
+	<h:outputStylesheet library="css" name="main.css" />
+    <h:outputScript library="js" name="Utils.js"/>
+	<b:navBar brand="Sitemas distribuidos" brandHref="/MAc/index.jsf" fluid="true"
+		inverse="true" style="background:#406791; font-weight: bold;" sticky="true">
+		<b:navbarLinks>
+			<b:navLink value="Item" href="/MAc/dashboard.jsf"></b:navLink>
+			<b:navLink value="Item" href="/MAc/movilidad/ofertas.jsf"></b:navLink>
+			<b:navLink value="Item" href="/MAc/movilidad/index.jsf"></b:navLink>
+			<b:navLink value="Item" href="/MAc/aprobacion/index.jsf"></b:navLink>
+			<b:navLink value="Item" href="/MAc/reportes/index.jsf"></b:navLink>
+		</b:navbarLinks>
+
+	</b:navBar>
+	<ui:insert name="content" />
+	<div class="footer">
+		<b:container fluid="true">
+			<b:row>
+				<b:column medium-screen="4" small-screen="12">
+					<div class="footer__item">
+						
+					</div>
+				</b:column>
+
+				<b:column medium-screen="4" small-screen="12">
+					<div class="footer__item">
+						<h4>&copy; 2020 Proyecto Sistemas distribuidos</h4>
+					</div>
+				</b:column>
+
+				<b:column medium-screen="4" small-screen="12">
+					<div class="footer__item">
+						
+					</div>
+				</b:column>
+			</b:row>
+		</b:container>
+	</div>
+</h:body>
+</html>

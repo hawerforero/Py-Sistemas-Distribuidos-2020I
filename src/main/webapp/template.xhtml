@@ -6,25 +6,28 @@
 	xmlns:b="http://bootsfaces.net/ui" xmlns:p="http://primefaces.org/ui">
 
 <h:head>
-	<title><ui:insert name="title" /> | Proyecto</title>
+	<title><ui:insert name="title" /> | Rutas Seguras Webapp</title>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8VDnY9i9bjfULni5aAZZGpq7ffr5uh68"></script>
 </h:head>
+
 <h:body>
 	<h:outputStylesheet library="css" name="bootstrap.min.css" />
 	<h:outputStylesheet library="css" name="main.css" />
     <h:outputScript library="js" name="Utils.js"/>
-	<b:navBar brand="Sitemas distribuidos" brandHref="/MAc/index.jsf" fluid="true"
+	
+	<b:navBar brand="Rutas Seguras Webapp" brandHref="/MAc/index.jsf" fluid="true"
 		inverse="true" style="background:#406791; font-weight: bold;" sticky="true">
 		<b:navbarLinks>
-			<b:navLink value="Item" href="/MAc/dashboard.jsf"></b:navLink>
-			<b:navLink value="Item" href="/MAc/movilidad/ofertas.jsf"></b:navLink>
-			<b:navLink value="Item" href="/MAc/movilidad/index.jsf"></b:navLink>
-			<b:navLink value="Item" href="/MAc/aprobacion/index.jsf"></b:navLink>
-			<b:navLink value="Item" href="/MAc/reportes/index.jsf"></b:navLink>
+			<b:navLink value="Item" href="#"></b:navLink>
+			<b:navLink value="Item" href="#"></b:navLink>
+			<b:navLink value="Item" href="#"></b:navLink>
+			<b:navLink value="Item" href="#"></b:navLink>
+			<b:navLink value="Item" href="#"></b:navLink>
 		</b:navbarLinks>
-
 	</b:navBar>
+	
 	<ui:insert name="content" />
+	
 	<div class="footer">
 		<b:container fluid="true">
 			<b:row>

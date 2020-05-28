@@ -1,11 +1,59 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html"> 
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:b="http://bootsfaces.net/ui">
 
-<h:head></h:head> 
-<body> 
+<ui:composition template="../template.xhtml">
+	<ui:define name="title">
+		Voluntarios
+	</ui:define>
+	<ui:define name="content">
+		<b:container fluid="true">
+			<h:form>
+				<h4>
+					<i class="fa fa-file-text page-header-icon"></i> Voluntarios
+				</h4>
+				<hr></hr>
+				<div class="well well-sm">
+					<b:commandButton value="Registrar" action="new?faces-redirect=true"
+						look="primary" />
+				</div>
+				<b:panel title="Lista de voluntarios" look="primary"
+					collapsible="false">
+					<b:row>
+						<b:column small-screen="12">
+							<b:messages />
+						</b:column>
+						<b:column small-screen="12">
+							<b:dataTable value="#{voluntarioModel.voluntarios}" var="voluntario">
+								<b:dataTableColumn value="#{voluntario.id}" label="Id" />
+								<b:dataTableColumn value="#{voluntario.nombre}" label="Nombre" />
+								<b:dataTableColumn value="#{voluntario.celular}" label="Celular" />
+								<b:dataTableColumn style="width: 120px;" label="Acciones">
+									<h:link outcome="edit?faces-redirect=true"
+										styleClass="btn btn-primary btn-sm right-space">
+										<b:iconAwesome name="pencil" />
+										<f:param name="id" value="#{voluntario.id}" />
+									</h:link>
+									<h:link outcome="map?faces-redirect=true"
+										styleClass="btn btn-success btn-sm right-space">
+										<b:iconAwesome name="fa-eye" />
+										<f:param name="id" value="#{voluntario.id}" />
+									</h:link>
+									<b:commandButton size="sm"
+										
+										iconAwesome="trash" look="danger">
+									</b:commandButton>
+								</b:dataTableColumn>
+							</b:dataTable>
+						</b:column>
+					</b:row>
+				</b:panel>
+			</h:form>
+		</b:container>
+	</ui:define>
+</ui:composition>
 
-</body> 
 </html>

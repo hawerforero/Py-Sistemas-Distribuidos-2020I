@@ -1,11 +1,125 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html"> 
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:b="http://bootsfaces.net/ui" xmlns:p="http://primefaces.org/ui">
 
-<h:head></h:head> 
-<body> 
+<ui:composition template="../template.xhtml">
+	<ui:define name="title">
+		Registrar voluntario
+	</ui:define>
+	<ui:define name="content">
+		<h:form id="newForm" enctype="multipart/form-data">
+			<b:container layout="fluid" style="width:600px;">
+				<b:row>
+					<b:panel title="Registrar voluntario" collapsible="false"
+						styleClass="box-shadow">
+						<b:column small-screen="12">
+							<b:messages />
+						</b:column>
+						<b:column medium-screen="12">
 
-</body> 
+							<b:column medium-screen="12">
+								<h:panelGroup display="block">
+									<b:inputText label="Nombre:" required="true"
+										placeholder="Ingrese Nombre" value="#{voluntarioModel.nombre}"
+										id="nombre">
+										<f:facet name="prepend">
+											<b:icon name="pencil" />
+										</f:facet>
+									</b:inputText>
+									<b:message for="nombre" />
+								</h:panelGroup>
+							</b:column>
+
+							<b:column medium-screen="12">
+								<h:panelGroup display="block">
+									<b:inputText id="celular" label="Celular:"
+										placeholder="Ingrese celular"
+										value="#{voluntarioModel.celular}">
+										<f:facet name="prepend">
+											<b:icon name="pencil" />
+										</f:facet>
+									</b:inputText>
+									<b:message for="celular" />
+								</h:panelGroup>
+							</b:column>
+
+							<b:column medium-screen="12">
+								<h:panelGroup display="block">
+									<b:inputText id="email" label="Email:" type="email"
+										placeholder="Ingrese email" value="#{voluntarioModel.email}">
+										<f:facet name="prepend">
+											<b:icon name="pencil" />
+										</f:facet>
+									</b:inputText>
+									<b:message for="email" />
+								</h:panelGroup>
+							</b:column>
+
+							<b:column medium-screen="4">
+								<h:panelGroup display="block">
+									<b:selectOneMenu label="Tipo vehiculo" id="tipoVehiculo"
+										required="true" value="#{voluntarioModel.tipoVehiculo}">
+										<f:facet name="prepend">
+											<b:icon name="pencil" />
+										</f:facet>
+										<f:selectItem itemLabel="Carro" itemValue="CARRO" />
+										<f:selectItem itemLabel="Moto" itemValue="Moto" />
+										<f:selectItem itemLabel="Camioneta" itemValue="Camioneta" />
+										<f:selectItem itemLabel="Ninguno" itemValue="Ninguno" />
+									</b:selectOneMenu>
+									<b:message for="tipoVehiculo" />
+								</h:panelGroup>
+							</b:column>
+
+
+
+							<b:column medium-screen="12">
+								<b:panel title="Tu ubicación" collapsible="false" look="primary">
+
+									<h:panelGroup display="block">
+										<b:inputText label="Latitud:" required="true"
+											placeholder="Ingrese Latitud"
+											value="#{voluntarioModel.latitud}" id="latitud">
+											<f:facet name="prepend">
+												<b:icon name="pencil" />
+											</f:facet>
+										</b:inputText>
+										<b:message for="latitud" />
+									</h:panelGroup>
+
+									<h:panelGroup display="block">
+										<b:inputText label="Longitud:" required="true"
+											placeholder="Ingrese Longitud"
+											value="#{voluntarioModel.longitud}" id="longitud">
+											<f:facet name="prepend">
+												<b:icon name="pencil" />
+											</f:facet>
+										</b:inputText>
+										<b:message for="longitud" />
+									</h:panelGroup>
+
+								</b:panel>
+							</b:column>
+
+						</b:column>
+						<f:facet name="footer">
+							<b:row>
+								<h:panelGroup display="block" style="float:right;">
+									<b:button value="Cancelar" href="index.jsf"
+										style="margin-right:.5em" />
+									<b:commandButton value="Guardar" look="primary" ajax="true"
+										update="@form" action="#{voluntarioController.save()}"
+										style="margin-right:30px" />
+								</h:panelGroup>
+							</b:row>
+						</f:facet>
+					</b:panel>
+				</b:row>
+			</b:container>
+		</h:form>
+	</ui:define>
+</ui:composition>
 </html>

@@ -13,12 +13,16 @@
 		<b:container fluid="true">
 			<h:form>
 				<h4>
-					<i class="fa fa-file-text page-header-icon"></i> Voluntarios
+					<i class="fa fa-file-text page-header-icon"></i> Voluntarios -
 				</h4>
 				<hr></hr>
 				<div class="well well-sm">
-					<b:commandButton value="Registrar" action="new?faces-redirect=true"
+					<b:commandButton value="Registrar" action="create?faces-redirect=true"
 						look="primary" />
+				</div>
+				<div class="well well-sm">
+					<b:commandButton value="Ver todos los puntos" action="map-list?faces-redirect=true"
+						look="warning" />
 				</div>
 				<b:panel title="Lista de voluntarios" look="primary"
 					collapsible="false">

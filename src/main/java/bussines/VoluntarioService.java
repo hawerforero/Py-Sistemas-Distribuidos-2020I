@@ -35,4 +35,9 @@ public class VoluntarioService implements IVoluntarioService {
 		return voluntarioDAO.find(id);
 	}
 
+	@Override
+	public void save(Voluntario voluntario) {
+		voluntarioDAO.save(voluntario);
+	}
+
 }
